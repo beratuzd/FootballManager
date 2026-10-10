@@ -26,6 +26,40 @@ public class FootballPlayer extends Athlete{
     public void setShootingRating(int shootingRating) {
         this.shootingRating = shootingRating;
     }
+    public void passing(int meter){
+        if(meter > 0 && meter <= 30){
+            if(passingRating >= 0){
+            System.out.println(getName() + " is able to pass the ball!");
+        }
+    }
+        else if(meter > 30 && meter <= 50){
+            if(passingRating >= 50){
+            System.out.println(getName() + " is able to pass the ball!");
+        }
+            else{
+                System.out.println(getName() + " is not able to pass the ball!");
+            }
+        }
+        else if(meter > 50 && meter <= 70){
+            if(passingRating >= 70){
+                System.out.println(getName() + " is able to pass the ball!");
+            }
+            else{
+                System.out.println(getName() + " is not able to pass the ball!");
+            }
+        }
+        else if(meter > 70 && meter <= 100){
+            if(passingRating >= 90){
+                System.out.println(getName() + " is able to pass the ball!");
+            }
+            else{
+                System.out.println(getName() + " is not able to pass the ball!");
+            }
+        }
+        else {
+            System.out.println("Invalid pass distance: " + meter + "m");
+        }
+    }
     @Override
     public void play() {
         System.out.println(getName() + " (" + position + ") is running, passing the ball, and creating chances!");
