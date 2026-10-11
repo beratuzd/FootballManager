@@ -1,10 +1,12 @@
 public class Athlete {
     private String name;
+    private String teamName;
     private int age;
     private int jerseyNumber;
     private int overallRating;
-    public Athlete(String name, int age, int jerseyNumber, int overallRating) {
+    public Athlete(String name, String teamName, int age, int jerseyNumber, int overallRating) {
         this.name = name;
+        this.teamName = teamName;
         this.age = age;
         this.jerseyNumber = jerseyNumber;
         this.overallRating = overallRating;
@@ -33,8 +35,15 @@ public class Athlete {
     public void setOverallRating(int overallRating) {
         this.overallRating = overallRating;
     }
+    public String getTeamName() {
+        return teamName;
+    }
+    public void setTeamName(String teamName) {
+        this.teamName = teamName;
+    }
     public void printAthlete() {
         System.out.println("Name: " + name);
+        System.out.println("Team Name: " + teamName);
         System.out.println("Age: " + age);
         System.out.println("Jersey Number: " + jerseyNumber);
         System.out.println("Overall Rating: " + overallRating);
