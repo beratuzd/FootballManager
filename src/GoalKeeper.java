@@ -1,12 +1,10 @@
 public class GoalKeeper extends Athlete{
     private int reflexRating;
     private int handlingRating;
-    private int cleanSheets;
-    public GoalKeeper(String name, int age, int jerseyNumber, int overallRating, int reflexRating, int handlingRating, int cleanSheets){
+    public GoalKeeper(String name, int age, int jerseyNumber, int overallRating, int reflexRating, int handlingRating){
         super(name, age, jerseyNumber, overallRating);
         this.reflexRating = reflexRating;
         this.handlingRating = handlingRating;
-        this.cleanSheets = cleanSheets;
     }
     public int getReflexRating() {
         return reflexRating;
@@ -19,12 +17,6 @@ public class GoalKeeper extends Athlete{
     }
     public void setHandlingRating(int handlingRating) {
         this.handlingRating = handlingRating;
-    }
-    public int getCleanSheets() {
-        return cleanSheets;
-    }
-    public void setCleanSheets(int cleanSheets) {
-        this.cleanSheets = cleanSheets;
     }
     @Override
     public void play() {

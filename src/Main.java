@@ -192,10 +192,7 @@ public class Main {
                         break;
                     }
                 }
-                System.out.println("Please enter a clean sheet:");
-                int goalkeeperCleanSheet = sc.nextInt();
-                sc.nextLine();
-                GoalKeeper goalkeeper = new GoalKeeper(goalkeeperName, goalAge, goalkeeperJerseyNumber, goalkeeperOverallRating, goalkeeperReflexRating, goalkeeperHandlingRating, goalkeeperCleanSheet);
+                GoalKeeper goalkeeper = new GoalKeeper(goalkeeperName, goalAge, goalkeeperJerseyNumber, goalkeeperOverallRating, goalkeeperReflexRating, goalkeeperHandlingRating);
                 homeTeam.addPlayer(goalkeeper);
             }
         }
@@ -367,10 +364,7 @@ public class Main {
                         break;
                     }
                 }
-                System.out.println("Please enter a clean sheet:");
-                int goalkeeperCleanSheet = sc.nextInt();
-                sc.nextLine();
-                GoalKeeper goalkeeper1 = new GoalKeeper(goalkeeperName, goalAge, goalkeeperJerseyNumber, goalkeeperOverallRating, goalkeeperReflexRating, goalkeeperHandlingRating, goalkeeperCleanSheet);
+                GoalKeeper goalkeeper1 = new GoalKeeper(goalkeeperName, goalAge, goalkeeperJerseyNumber, goalkeeperOverallRating, goalkeeperReflexRating, goalkeeperHandlingRating);
                 awayTeam.addPlayer(goalkeeper1);
             }
         }
