@@ -4,6 +4,7 @@ public class Main {
     private static Scanner sc = new Scanner(System.in);
 
     public static void main(String[] args) {
+        System.out.println("Welcome to the football manager mini game!");
         System.out.println("Please enter a home team name:");
         String homeTeamName = sc.nextLine();
         Team homeTeam = new Team(homeTeamName);
@@ -368,6 +369,10 @@ public class Main {
                 awayTeam.addPlayer(goalkeeper1);
             }
         }
+        while(true) {
+            System.out.println("Do u want to play a match?");
+            String answer = sc.nextLine();
+            if(answer.equalsIgnoreCase("yes")){
         System.out.println("\n========================================");
         System.out.println("MATCH IS STARTING: " + homeTeamName + " VS " + awayTeamName + " ⚽");
         System.out.println("========================================");
@@ -377,5 +382,15 @@ public class Main {
 
         System.out.println("\n--- " + awayTeamName + " SQUAD ON THE PITCH ---");
         awayTeam.playMatch();
+        break;
+            }
+            else if(answer.equalsIgnoreCase("no")){
+                System.out.println("Goodbye!");
+                break;
+            }
+            else{
+                System.out.println("Please enter a valid answer!");
+            }
+        }
     }
 }
