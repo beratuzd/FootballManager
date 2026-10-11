@@ -19,6 +19,7 @@ public class Team {
         this.players = players;
     }
     public void addPlayer(Athlete player) {
+        player.setTeamName(this.teamName);
         players.add(player);
         if (player instanceof GoalKeeper) {
             System.out.println("Goalkeeper has signed: " + player.getName());
