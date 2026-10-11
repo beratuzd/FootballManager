@@ -123,7 +123,7 @@ public class Main {
                 break;
             }
             }
-            FootballPlayer player = new FootballPlayer(playerName, age, jerseyNumber, playerOverallRating, playerPosition, playerPassRating, playerShootRating);
+            FootballPlayer player = new FootballPlayer(playerName,homeTeamName, age, jerseyNumber, playerOverallRating, playerPosition, playerPassRating, playerShootRating);
             homeTeam.addPlayer(player);
             if (i == 2) {
                 System.out.println("Please enter a goalkeeper name:");
@@ -193,7 +193,7 @@ public class Main {
                         break;
                     }
                 }
-                GoalKeeper goalkeeper = new GoalKeeper(goalkeeperName, goalAge, goalkeeperJerseyNumber, goalkeeperOverallRating, goalkeeperReflexRating, goalkeeperHandlingRating);
+                GoalKeeper goalkeeper = new GoalKeeper(goalkeeperName,homeTeamName, goalAge, goalkeeperJerseyNumber, goalkeeperOverallRating, goalkeeperReflexRating, goalkeeperHandlingRating);
                 homeTeam.addPlayer(goalkeeper);
             }
         }
@@ -295,7 +295,7 @@ public class Main {
                     break;
                 }
             }
-            FootballPlayer player1 = new FootballPlayer(playerName, age, jerseyNumber, playerOverallRating, playerPosition, playerPassRating, playerShootRating);
+            FootballPlayer player1 = new FootballPlayer(playerName,homeTeamName, age, jerseyNumber, playerOverallRating, playerPosition, playerPassRating, playerShootRating);
             awayTeam.addPlayer(player1);
             if (i == 2) {
                 System.out.println("Please enter a goalkeeper name:");
@@ -365,7 +365,7 @@ public class Main {
                         break;
                     }
                 }
-                GoalKeeper goalkeeper1 = new GoalKeeper(goalkeeperName, goalAge, goalkeeperJerseyNumber, goalkeeperOverallRating, goalkeeperReflexRating, goalkeeperHandlingRating);
+                GoalKeeper goalkeeper1 = new GoalKeeper(goalkeeperName,awayTeamName, goalAge, goalkeeperJerseyNumber, goalkeeperOverallRating, goalkeeperReflexRating, goalkeeperHandlingRating);
                 awayTeam.addPlayer(goalkeeper1);
             }
         }
@@ -382,8 +382,18 @@ public class Main {
 
         System.out.println("\n--- " + awayTeamName + " SQUAD ON THE PITCH ---");
         awayTeam.playMatch();
-        break;
+        for(int i=1;i<91;i++){
+            if(i%15==0){
+                if(i==45){
+                    System.out.println("Half-time");
+                }
+                System.out.println("Time: " + i + " minutes");
+                System.out.println();
+
+                }
             }
+                break;
+        }
             else if(answer.equalsIgnoreCase("no")){
                 System.out.println("Goodbye!");
                 break;
