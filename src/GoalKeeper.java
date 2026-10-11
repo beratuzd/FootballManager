@@ -1,8 +1,8 @@
 public class GoalKeeper extends Athlete{
     private int reflexRating;
     private int handlingRating;
-    public GoalKeeper(String name, int age, int jerseyNumber, int overallRating, int reflexRating, int handlingRating){
-        super(name, age, jerseyNumber, overallRating);
+    public GoalKeeper(String name,String teamName, int age, int jerseyNumber, int overallRating, int reflexRating, int handlingRating){
+        super(name,teamName,age, jerseyNumber, overallRating);
         this.reflexRating = reflexRating;
         this.handlingRating = handlingRating;
     }
