@@ -373,100 +373,107 @@ public class Main {
                             double distance = (double) (Math.random() * 100);
                             System.out.println("Time: " + i + " minutes");
                             System.out.println("Player distance to goalkeeper is: " + distance);
-                            System.out.println("What do u want to do?");
-                            System.out.println("Shoot or pass?");
-                            String decision = sc.nextLine();
-                            if (decision.equalsIgnoreCase("shoot")) {
-                                while (true) {
-                                    for (int j = 0; j < 3; j++) {
-                                        System.out.println(j + 1 + ". " + homeTeam.getPlayers().get(j).getName());
-                                    }
-                                    System.out.println("Which player do u want to shoot?");
-                                    int playerIndex = sc.nextInt();
-                                    sc.nextLine();
-                                    if (playerIndex >= 1 && playerIndex <= 3) {
-                                        FootballPlayer shooter = (FootballPlayer) homeTeam.getPlayers().get(playerIndex - 1);
-                                        GoalKeeper awayGoalkeeper = (GoalKeeper) awayTeam.getPlayers().get(3);
-                                        boolean isGoal = shooter.shooting((int) distance, awayGoalkeeper);
-                                        if (isGoal) {
-                                            homeGoal++;
-                                            System.out.println("Home team has scored: " + homeGoal);
-                                            System.out.println(homeTeamName + " : " + homeGoal + " - " + awayGoal + " : " + awayTeamName);
-                                            break;
+                            while (true) {
+                                System.out.println("What do u want to do?");
+                                System.out.println("Shoot or pass?");
+                                String decision = sc.nextLine();
+                                if (decision.equalsIgnoreCase("shoot")) {
+                                    while (true) {
+                                        for (int j = 0; j < 3; j++) {
+                                            System.out.println(j + 1 + ". " + homeTeam.getPlayers().get(j).getName());
                                         }
-                                    } else {
-                                        System.out.println("Invalid player number!");
+                                        System.out.println("Which player do u want to shoot?");
+                                        int playerIndex = sc.nextInt();
+                                        sc.nextLine();
+                                        if (playerIndex >= 1 && playerIndex <= 3) {
+                                            FootballPlayer shooter = (FootballPlayer) homeTeam.getPlayers().get(playerIndex - 1);
+                                            GoalKeeper awayGoalkeeper = (GoalKeeper) awayTeam.getPlayers().get(3);
+                                            boolean isGoal = shooter.shooting((int) distance, awayGoalkeeper);
+                                            if (isGoal) {
+                                                homeGoal++;
+                                                System.out.println("Home team has scored: " + homeGoal);
+                                                System.out.println(homeTeamName + " : " + homeGoal + " - " + awayGoal + " : " + awayTeamName);
+                                            }
+                                            break;
+                                        } else {
+                                            System.out.println("Invalid player number!");
+                                        }
                                     }
+                                    break;
+                                } else if (decision.equalsIgnoreCase("pass")) {
+                                    while (true) {
+                                        for (int j = 0; j < 3; j++) {
+                                            System.out.println(j + 1 + ". " + homeTeam.getPlayers().get(j).getName());
+                                        }
+                                        System.out.println("Which player do u want to pass?");
+                                        int playerIndex = sc.nextInt();
+                                        sc.nextLine();
+                                        if (playerIndex >= 1 && playerIndex <= 3) {
+                                            FootballPlayer passer = (FootballPlayer) homeTeam.getPlayers().get(playerIndex - 1);
+                                            passer.passing((int) distance);
+                                            break;
+                                        } else {
+                                            System.out.println("Invalid player number!");
+                                        }
+                                    }
+                                    break;
+                                } else {
+                                    System.out.println("Invalid decision!");
                                 }
-                            } else if (decision.equalsIgnoreCase("pass")) {
+                            }
+                            } else if (selection >= 0.5) {
+                                System.out.println("Right now u are playing with away team!");
+                                double distance = (double) (Math.random() * 100);
+                                System.out.println("Time: " + i + " minutes");
+                                System.out.println("Player distance to goalkeeper is: " + distance);
                                 while (true) {
-                                    for (int j = 0; j < 3; j++) {
-                                        System.out.println(j + 1 + ". " + homeTeam.getPlayers().get(j).getName());
-                                    }
-                                    System.out.println("Which player do u want to pass?");
-                                    int playerIndex = sc.nextInt();
-                                    sc.nextLine();
-                                    if (playerIndex >= 1 && playerIndex <= 3) {
-                                        FootballPlayer passer = (FootballPlayer) homeTeam.getPlayers().get(playerIndex - 1);
-                                        passer.passing((int) distance);
+                                    System.out.println("What do u want to do?");
+                                    System.out.println("Shoot or pass?");
+                                    String decision = sc.nextLine();
+                                    if (decision.equalsIgnoreCase("shoot")) {
+                                        while (true) {
+                                            for (int j = 0; j < 3; j++) {
+                                                System.out.println(j + 1 + ". " + awayTeam.getPlayers().get(j).getName());
+                                            }
+                                            System.out.println("Which player do u want to shoot?");
+                                            int playerIndex = sc.nextInt();
+                                            sc.nextLine();
+                                            if (playerIndex >= 1 && playerIndex <= 3) {
+                                                FootballPlayer shooter = (FootballPlayer) awayTeam.getPlayers().get(playerIndex - 1);
+                                                GoalKeeper homeGoalkeeper = (GoalKeeper) homeTeam.getPlayers().get(3);
+                                                boolean isGoal = shooter.shooting((int) distance, homeGoalkeeper);
+                                                if (isGoal) {
+                                                    awayGoal++;
+                                                    System.out.println("Away team has scored: " + awayGoal);
+                                                    System.out.println(homeTeamName + " : " + homeGoal + " - " + awayGoal + " : " + awayTeamName);
+                                                }
+                                                break;
+                                            } else {
+                                                System.out.println("Invalid player number!");
+                                            }
+                                        }
+                                        break;
+                                    } else if (decision.equalsIgnoreCase("pass")) {
+                                        while (true) {
+                                            for (int j = 0; j < 3; j++) {
+                                                System.out.println(j + 1 + ". " + awayTeam.getPlayers().get(j).getName());
+                                            }
+                                            System.out.println("Which player do u want to pass?");
+                                            int playerIndex = sc.nextInt();
+                                            sc.nextLine();
+                                            if (playerIndex >= 1 && playerIndex <= 3) {
+                                                FootballPlayer passer = (FootballPlayer) awayTeam.getPlayers().get(playerIndex - 1);
+                                                passer.passing((int) distance);
+                                                break;
+                                            } else {
+                                                System.out.println("Invalid player number!");
+                                            }
+                                        }
                                         break;
                                     } else {
-                                        System.out.println("Invalid player number!");
+                                        System.out.println("Invalid decision!");
                                     }
                                 }
-                            }
-                            else{
-                                System.out.println("Invalid decision!");
-                            }
-                        } else if (selection >= 0.5) {
-                            System.out.println("Right now u are playing with away team!");
-                            double distance = (double) (Math.random() * 100);
-                            System.out.println("Time: " + i + " minutes");
-                            System.out.println("Player distance to goalkeeper is: " + distance);
-                            System.out.println("What do u want to do?");
-                            System.out.println("Shoot or pass?");
-                            String decision = sc.nextLine();
-                            if (decision.equalsIgnoreCase("shoot")) {
-                                while (true) {
-                                    for (int j = 0; j < 3; j++) {
-                                        System.out.println(j + 1 + ". " + awayTeam.getPlayers().get(j).getName());
-                                    }
-                                    System.out.println("Which player do u want to shoot?");
-                                    int playerIndex = sc.nextInt();
-                                    sc.nextLine();
-                                    if (playerIndex >= 1 && playerIndex <= 3) {
-                                        FootballPlayer shooter = (FootballPlayer) awayTeam.getPlayers().get(playerIndex - 1);
-                                        GoalKeeper homeGoalkeeper = (GoalKeeper) homeTeam.getPlayers().get(3);
-                                        boolean isGoal = shooter.shooting((int)distance, homeGoalkeeper);
-                                        if (isGoal) {
-                                            awayGoal++;
-                                            System.out.println("Away team has scored: " + awayGoal);
-                                            System.out.println(homeTeamName + " : " + homeGoal + " - " + awayGoal + " : " + awayTeamName);
-                                            break;
-                                        }
-                                    } else {
-                                        System.out.println("Invalid player number!");
-                                    }
-                                }
-                            }
-                            else if (decision.equalsIgnoreCase("pass")) {
-                                while (true) {
-                                    for (int j = 0; j < 3; j++) {
-                                        System.out.println(j + 1 + ". " + awayTeam.getPlayers().get(j).getName());
-                                    }
-                                    System.out.println("Which player do u want to pass?");
-                                    int playerIndex = sc.nextInt();
-                                    sc.nextLine();
-                                    if (playerIndex >= 1 && playerIndex <= 3) {
-                                        FootballPlayer passer = (FootballPlayer) awayTeam.getPlayers().get(playerIndex - 1);
-                                        passer.passing((int) distance);
-                                        break;
-                                    } else System.out.println("Invalid player number!");
-                                }
-                            }
-                            else{
-                                System.out.println("Invalid decision!");
-                            }
                         }
                         if (i == 45) {
                             System.out.println("Half-time");
