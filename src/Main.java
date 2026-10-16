@@ -393,9 +393,6 @@ public class Main {
                                             System.out.println("Home team has scored: " + homeGoal);
                                             System.out.println(homeTeamName + " : " + homeGoal + " - " + awayGoal + " : " + awayTeamName);
                                             break;
-                                        } else {
-                                            System.out.println("The shot was saved!");
-                                            break;
                                         }
                                     } else {
                                         System.out.println("Invalid player number!");
@@ -445,9 +442,6 @@ public class Main {
                                             awayGoal++;
                                             System.out.println("Away team has scored: " + awayGoal);
                                             System.out.println(homeTeamName + " : " + homeGoal + " - " + awayGoal + " : " + awayTeamName);
-                                            break;
-                                        } else {
-                                            System.out.println("The shot was saved!");
                                             break;
                                         }
                                     } else {
