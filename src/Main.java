@@ -354,7 +354,7 @@ public class Main {
             String answer = sc.nextLine();
             if (answer.equalsIgnoreCase("yes")) {
                 System.out.println("\n========================================");
-                System.out.println("MATCH IS STARTING: " + homeTeamName + " VS " + awayTeamName + " ⚽");
+                System.out.println("MATCH IS STARTING: " + homeTeamName + " VS " + awayTeamName );
                 System.out.println("========================================");
 
                 System.out.println("\n--- " + homeTeamName + " SQUAD ON THE PITCH ---");
